@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>N1COONYS简历</title>
+    <link rel="stylesheet" href="./a.CSS">
+    <!-- 这里使用外部方式引用 -->
+    <script src="//at.alicdn.com/t/font_451045_32zbfqegtq3t0529.js"></script>
+    <style type="text/css">
+      .icon {
+         width: 1em; height: 1em;
+         vertical-align: -0.15em;
+         fill: currentColor;
+         overflow: hidden;
+      }
+  </style>
+  </head>
+  <body>
+    <!-- CSS的一种背景方式当然还可以用 
+    body
+    {
+        background-color:red;
+
+    }
+   
+     <style>
+        h1{
+            color: aqua;
+        }
+    </style>  
+     使用style标签的方法-->
+    <div id="topNavBar" class="topNavBar">
+      <div class="topNavBar-inner clearfix">
+        <a class="logo" href="#" alt="logo" style="float: left;" >
+          <span class="rs">N1</span><span class="card">connys</span>
+          <!-- span和span之间有个回车，所以RS与CARD之间有空格 -->
+        </a>
+        <nav style="float: right;">
+            <ul class="clearfix"> 
+              <!--style="list-style: none; margin: 0%; padding: 0%;border: 1px solid red;" class="clearfix"
+          这个内敛太长了，所以可以写一个类-->
+            <li><a href="#">关于</a> </li>
+            <li><a href="#" class="meantigger">技能</a>
+              <ul class="submenu ">
+                <li>作品1</li>
+                <li>作品2</li>
+                <li>作品3</li>
+              </ul></li>
+              <li><a href="#" class="meantigger">博客</a>
+                <ul class="submenu ">
+                  <li>作品1</li>
+                  <li>作品2</li>
+                  <li>作品3</li>
+                </ul></li></li>
+              <li><a href="#">日历</a></li>
+              <li><a href="#">联系方式</a></li>
+              <li><a href="#">其他</a></li>
+          </ul>
+        </nav>
+      </div>
+    
+    </div>
+    <div class="banner" ></div>
+    <div class="mask"></div>
+    <main>
+      <div class="card">
+        <div class="pictureAndText clearfix">
+          <div class="picture">
+            <img src="./QQ图片20220827193234.jpg" width="360px"height="100%" alt="头像">
+          </div>
+          <div class="text">
+            <div class="profile">
+              <span class="welcome">
+              Hello
+                <span class="triangle"></span>
+              </span>
+               <h1>合成光</h1>
+              <p>前端开发工程师</p>
+              <hr>
+              <dl>
+                <dt>年龄</dt>
+                <dd>18</dd>
+                <dt>所在城市</dt>
+                <dd>北京</dd>
+                <dt>邮箱</dt>
+                <dd>@foxmail.com</dd>
+                <dt>手机</dt>
+                <dd>13812345678</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <footer class="media">
+          <a href="#">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-github"></use>
+            </svg>
+          </a>
+          <a href="#">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-Ankerwebicon-"></use>
+            </svg>
+          </a>
+          <a href="#">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-weibo"></use>
+            </svg>
+          </a>
+        </footer>
+      </div>
+
+      <a class="button" href="#">下载 PDF 简历</a>
+
+      <!-- <p>
+        方应杭， 资深前端工程师，资深前端讲师，现在在 饥人谷 教前端课程。<br>
+        技能：前端开发，Rails 开发，Node.js 开发
+      </p>
+
+    </main>
+    <section>
+      <h2>技能</h2>
+      <ol>
+        <li>HTML 5 &amp; CSS 3</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+        <li>Vue</li>
+        <li>React</li>
+        <li>HTTP</li>
+      </ol>
+    </section>
+    <section>
+      <h2>作品集</h2>
+      <nav>
+        <ol>
+          <li>所有</li>
+          <li>框架</li>
+          <li>原生JS&amp;CSS</li>
+        </ol>
+      </nav>
+
+      <div class="jobs">
+        <div class="big"></div>
+        <div class="small"></div>
+        <div class="small"></div>
+      </div>
+
+    </section> -->
+    <script>
+      window.onscroll=function(sco){
+      if(window.scrollY>0)
+      {
+        topNavBar.classList.add('sticky')
+      }
+      else
+      {
+        topNavBar.classList.remove('sticky')
+      }
+    }
+    let aTags=document.getElementsByClassName('meantigger')
+    console.log(aTags)
+    for(let i=0;i<aTags.length;i++)
+    {
+      aTags[i].onmouseenter=function(x)
+      {
+         let a=x.currentTarget
+        //  console.log(a.nextSibling.nextSibling)
+        //  let brother=a.nextSibling
+        //  while(brother.nodeType===3)
+        //  {
+        //   brother=brother.nextSibling
+        //  }
+        let brother=a.nextSibling
+        while(brother.tagName !== 'UL')
+        {
+          brother=brother.nextSibling
+        }
+       brother.classList.add('active')
+         
+      }
+      aTags[i].onmouseleave=function(x)
+      {
+        let a=x.currentTarget
+        let brother=a.nextSibling
+        while(brother.tagName !== 'UL')
+        {
+          brother=brother.nextSibling
+        }
+       brother.classList.remove('active')
+      }
+    }
+    </script>
+  </body>
+</html>
