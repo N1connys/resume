@@ -187,6 +187,38 @@
        brother.classList.remove('active')
       }
     }
+         }
+    let liTags=document.getElementsByClassName('meantigger')
+    for(let i=0;i<liTags.length;i++)
+    {
+      liTags[i].onmouseenter=function(x)
+      {
+          let li=x.currentTarget
+        //  console.log(a.nextSibling.nextSibling)
+        //  let brother=a.nextSibling
+        //  while(brother.nodeType===3)
+        //  {
+        //   brother=brother.nextSibling
+        //  }
+        let brother=li.getElementsByTagName('ul')[0]
+        // while(brother.tagName !== 'UL')
+        // {
+        //   brother=brother.nextSibling 
+        // }
+       brother.classList.add('active')
+         
+      }
+      liTags[i].onmouseleave=function(x)
+      {
+        let li=x.currentTarget
+        let brother=li.getElementsByTagName('ul')[0]
+        // while(brother.tagName !== 'UL')
+        // {
+        //   brother=brother.nextSibling
+        // }
+       brother.classList.remove('active')
+      }
+    }
     </script>
   </body>
 </html>
